@@ -76,7 +76,7 @@ public class Main {
 
                 case 4:
                     System.out.println("Calculating Maximum Sustainable Withdrawal...");
-                    // MaximumExpensed.maximumExpensed(); // TODO: Uncomment this when class gets added
+                    MaximumExpensed.maximumExpensed();
                     break;
 
                 case 5:

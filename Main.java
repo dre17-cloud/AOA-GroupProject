@@ -40,7 +40,7 @@ public class Main {
 
                 case 2:
                     System.out.println("Running Variable Growth Simulation...");
-                    // VariableInvestor.variableInvestor(); // TODO: Uncomment when this class gets added 
+                    double finalBalance = variableInvestor(principal, rateList);
                     break;
 
                 case 3:

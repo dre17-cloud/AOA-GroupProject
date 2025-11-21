@@ -5,10 +5,6 @@ public class VariableGrowth {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        System.out.println("===============================================");
-        System.out.println("    VARIABLE RETIREMENT GROWTH   ");
-        System.out.println("===============================================");
-
         try {
             System.out.print("Enter starting principal: ");
             double principal = sc.nextDouble();

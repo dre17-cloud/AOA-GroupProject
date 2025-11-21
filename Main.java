@@ -39,8 +39,10 @@ public class Main {
                     break;
 
                 case 2:
-                    System.out.println("Running Variable Growth Simulation...");
-                    double finalBalance = variableInvestor(principal, rateList);
+                      System.out.println("===============================================");
+                      System.out.println("    VARIABLE RETIREMENT GROWTH   ");
+                      System.out.println("===============================================");
+                      double finalBalance = variableInvestor(principal, rateList);
                     break;
 
                 case 3:

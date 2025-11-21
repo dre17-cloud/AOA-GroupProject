@@ -39,10 +39,31 @@ public class Main {
                     break;
 
                 case 2:
-                      System.out.println("===============================================");
-                      System.out.println("    VARIABLE RETIREMENT GROWTH   ");
-                      System.out.println("===============================================");
-                      double finalBalance = variableInvestor(principal, rateList);
+                    System.out.println("===============================================");
+                    System.out.println("    VARIABLE RETIREMENT GROWTH");
+                    System.out.println("===============================================");
+
+                    System.out.print("Enter starting principal: ");
+                    double principal = scanner.nextDouble();
+
+                    System.out.print("Enter number of years: ");
+                    int years = scanner.nextInt();
+
+                    double[] rateList = new double[years];
+
+                   System.out.println("\nEnter yearly rates (e.g., 0.05 for 5%, -0.02 for -2%):");
+                   for (int i = 0; i < years; i++) {
+                       System.out.print("Rate for Year " + (i + 1) + ": ");
+                       rateList[i] = scanner.nextDouble();
+                    }
+
+                    // THE FUNCTION CALL 
+                    double finalBalance = VariableGrowth.variableInvestor(principal, rateList);
+
+                    System.out.println("\n-----------------------------------------------");
+                    System.out.printf("Final Balance After %d Years: $%.2f\n", years, finalBalance);
+                    System.out.println("-----------------------------------------------");
+
                     break;
 
                 case 3:

@@ -76,7 +76,14 @@ public class Main {
 
                 case 4:
                     System.out.println("Calculating Maximum Sustainable Withdrawal...");
-                    MaximumExpensed.maximumExpensed();
+                    System.out.print("Enter initial balance: ");
+                    double balance = scanner.nextFloat();
+
+                    System.out.print("Enter annual rate (decimal, e.g., 0.05 for 5%): ");
+                    double rate = scanner.nextFloat();
+
+                    double maxWithdrawal = MaximumExpensed.maximumExpensed(balance, rate);
+                    System.out.println("Maximum sustainable annual withdrawal: $" + String.format("%.2f", maxWithdrawal));
                     break;
 
                 case 5:

@@ -46,20 +46,5 @@ public class MaximumExpensed {
 		return (low + high)/ 2.0d;
 		
 	}
-	
-	public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-
-        System.out.print("Enter initial balance: ");
-        double balance = scanner.nextFloat();
-
-        System.out.print("Enter annual rate (decimal, e.g., 0.05 for 5%): ");
-        double rate = scanner.nextFloat();
-
-        double maxWithdrawal = maximumExpensed(balance, rate);
-        System.out.println("Maximum sustainable annual withdrawal: $" + String.format("%.2f", maxWithdrawal));
-
-        scanner.close();
-    }
 
 }

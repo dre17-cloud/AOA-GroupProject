@@ -1,6 +1,6 @@
-# AOA-GroupProject Documentation/Theory Component
+# Analysis of Algorithms GroupProject Theory Compoenetnt - Function Three - Retirement Expense Simulation
+# Author: Marlon Cockett 2302661
 
-## Function Three - Retirement Expense Simulation
 ### Problem Definition
 The `finallyRetired()` function/algorithm will determine the number of years until a retirement account reaches zero when the retiree withdraws a fixed expense every year and earns a fixed interest rate.
 

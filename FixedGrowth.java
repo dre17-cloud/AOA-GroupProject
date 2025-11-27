@@ -1,3 +1,15 @@
+
+/**
+ * Author: D'Andre Williams
+ * Purpose:
+ * This program simulates the growth of a retirement fund using fixed yearly 
+ * compound interest. It accepts a principal amount, a fixed annual interest 
+ * rate, and a number of years from the user. The program validates all user 
+ * inputs to ensure they are non-negative and correctly formatted. After 
+ * validation, it applies compound interest for the specified number of years 
+ * and displays the final accumulated balance.
+ */
+
 import java.util.Scanner;
 
 public class FixedGrowth {

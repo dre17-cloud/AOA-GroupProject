@@ -27,15 +27,38 @@ public class FinallyRetired {
     // Resuable utility for prompting the user for the algo inputs. This is the reason the class members are arrays. 
     // To simulate pass-by-reference. I'm sure the programming gods will forgive this trangression.
     public void promptInput(String name, float[] value) {
-        System.out.print("Enter " + name + ": ");
-        if(scanner.hasNextFloat()) {
-            value[0] = scanner.nextFloat();
-        } else {
-            System.out.println("Invalid input, try again!");
-            scanner.next();
-            promptInput(name, value);
+        while (true) {
+            System.out.print("Enter " + name + ": ");
+
+            if (!scanner.hasNextFloat()) {
+                System.out.println("Invalid input, try again!");
+                scanner.next(); 
+                continue;       
+            }
+
+            float input = scanner.nextFloat();
+
+            // Validation Checks
+            if (name.contains("balance") && input <= 0) {
+                System.out.println("Balance must be a positive non-zero number. Try again!");
+                continue;
+            }
+
+            if (name.contains("rate") && input < -1) {
+                System.out.println("Rate cannot be less than -1 (-100%). Try again!");
+                continue;
+            }
+
+            if (name.contains("expense") && input <= 0) {
+                System.out.println("Expense must be positive. Try again!");
+                continue;
+            }
+
+            value[0] = input;
+            break; 
         }
     }
+
 
     public int getYear() {
         return year;

@@ -38,26 +38,79 @@ public class Main {
                     FixedGrowth.fixedGrowth();  
                     break;
 
+               
                 case 2:
                     System.out.println("===============================================");
                     System.out.println("    VARIABLE RETIREMENT GROWTH");
                     System.out.println("===============================================");
 
-                    System.out.print("Enter starting principal: ");
-                    double principal = scanner.nextDouble();
+                    // ===== PRINCIPAL (RE-ENTER UNTIL VALID) =====
+                    double principal;
+                    while (true) {
+                        System.out.print("Enter starting principal: ");
 
-                    System.out.print("Enter number of years: ");
-                    int years = scanner.nextInt();
+                        if (!scanner.hasNextDouble()) {
+                            System.out.println("Invalid input. Enter a number.");
+                            scanner.next(); // clear invalid input
+                            continue;
+                        }
+
+                        principal = scanner.nextDouble();
+
+                        if (principal < 0) {
+                            System.out.println("Principal cannot be negative. Try again.");
+                        } else {
+                            break; // valid
+                        }
+                    }
+
+                    // ===== YEARS (RE-ENTER UNTIL VALID) =====
+                    int years;
+                    while (true) {
+                        System.out.print("Enter number of years: ");
+
+                        if (!scanner.hasNextInt()) {
+                            System.out.println("Invalid input. Enter a whole number.");
+                            scanner.next();
+                            continue;
+                        }
+
+                        years = scanner.nextInt();
+
+                        if (years <= 0) {
+                            System.out.println("Number of years must be greater than zero.");
+                        } else {
+                            break;
+                        }
+                    }
 
                     double[] rateList = new double[years];
 
-                   System.out.println("\nEnter yearly rates (e.g., 0.05 for 5%, -0.02 for -2%):");
-                   for (int i = 0; i < years; i++) {
-                       System.out.print("Rate for Year " + (i + 1) + ": ");
-                       rateList[i] = scanner.nextDouble();
+                    // ===== RATES (RE-ENTER IF INVALID) =====
+                    System.out.println("\nEnter yearly rates (e.g., 0.05 for 5%, -0.02 for -2%):");
+                    for (int i = 0; i < years; i++) {
+
+                        while (true) {
+                            System.out.print("Rate for Year " + (i + 1) + ": ");
+
+                            if (!scanner.hasNextDouble()) {
+                                System.out.println("Invalid rate. Enter a number.");
+                                scanner.next();
+                                continue;
+                            }
+
+                            double rate = scanner.nextDouble();
+
+                            if (rate < -1) {
+                                System.out.println("Rate cannot be less than -1 (-100%). Try again.");
+                            } else {
+                                rateList[i] = rate;
+                                break;
+                            }
+                        }
                     }
 
-                    // THE FUNCTION CALL 
+                    // THE FUNCTION CALL
                     double finalBalance = VariableGrowth.variableInvestor(principal, rateList);
 
                     System.out.println("\n-----------------------------------------------");
@@ -65,6 +118,7 @@ public class Main {
                     System.out.println("-----------------------------------------------");
 
                     break;
+
 
                 case 3:
                     System.out.println("Running Retirement Expense Simulation...");
